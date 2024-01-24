@@ -10,7 +10,7 @@ app = Flask(__name__)
 def hello():
     return 'Hola desde Raylway en Python'
 
-@app.home('/index')   
+@app.route('/index')   
 def home():
     return render_template("index.html")    
 
