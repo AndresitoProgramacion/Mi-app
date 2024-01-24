@@ -1,5 +1,0 @@
-Flask==2.01
-Flask==1.4.31
-#mysqlclient==2.0.3
-PyMySQL==1.0.2
-Werkzeug==2.2.2
