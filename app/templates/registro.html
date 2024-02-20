@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/img/logo1.png">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form action="{{ url_for('bp_registro.insertar') }}" method="post" >
+            <label for="">Nombre</label>
+            <input name="nombre" type="" required >
+            <label  for="">Correo</label>
+            <input name="correo" type="" required >
+            <label for="">Direccion</label>
+            <input name="direccion" type="" required >
+            <label for="">Telefono</label>
+            <input name="telefono" type="" required >
+            <label for="">Contrasena</label>
+            <input  name="contrasena" type="" required >
+            <button>Registrar</button>
+        </form>
+
+
+
+    </div>
+</body>
+
+</html>
