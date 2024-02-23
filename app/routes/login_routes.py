@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, jsonif
 from app import db
 from app.models.Clientes import Clientes
 from flask_bcrypt import Bcrypt
-from flask_login import current_user,login_user
+from flask_login import current_user,login_user,login_required,logout_user
 
 bp = Blueprint('Login', __name__)
 
@@ -30,6 +30,13 @@ def index():
     return render_template("index.html")
 
 
+@bp.route('/logout',methods=['GET', 'POST'])
+@login_required
+def logout():
+    if current_user.is_authenticated:
+        logout_user()
+        flash('sesion cerrada.', 'info')
+    return  render_template("index.html")
 
-    
+
 

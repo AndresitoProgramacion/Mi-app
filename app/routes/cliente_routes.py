@@ -80,3 +80,4 @@ def show_comprar():
 @bp.route('/Cliente/shop-single')
 def show_single():
     return render_template('shop-single.html')
+
