@@ -76,6 +76,7 @@ def show_shop():
 def show_comprar():
     return render_template('shop.html')
 
-@bp.route('/Cliente/shop')
-def show_compras():
+
+@bp.route('/Cliente/shop-single')
+def show_single():
     return render_template('shop-single.html')
