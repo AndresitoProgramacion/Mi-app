@@ -3,6 +3,8 @@ from app import db
 from app.models.Clientes import Clientes
 from flask_bcrypt import Bcrypt
 from flask_login import current_user,login_user,login_required,logout_user
+from app.models.Carrito import Carrito
+
 
 bp = Blueprint('Login', __name__)
 
@@ -22,7 +24,9 @@ def index():
             if bcrypt.check_password_hash(pw_hash=password,password=contraseña):
                 login_user(user)
                 flash("Login successful!", "success")
-                return render_template('apple1.html')
+                carrito_compras = Carrito()
+                tamano = carrito_compras.tamanoD()
+                return render_template('apple1.html', tamano_carrito= tamano)
         flash('Invalid credentials. Please try again.', 'danger')
     
     if current_user.is_authenticated:
@@ -35,8 +39,8 @@ def index():
 def logout():
     if current_user.is_authenticated:
         logout_user()
-        flash('sesion cerrada.', 'info')
-    return  render_template("index.html")
+        flash('You have been logged out.', 'info')
+        return  render_template("index.html")
 
 
 

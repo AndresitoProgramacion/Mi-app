@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 from app.models.Clientes import Clientes
+from app.models.Carrito import Carrito
 from app import db
 
 bp = Blueprint('Cliente', __name__)
@@ -70,11 +71,15 @@ def show_abouts():
 
 @bp.route('/Cliente/shop')
 def show_shop():
-    return render_template('shop.html')
+    carrito_compras = Carrito()
+    tamano = carrito_compras.tamanoD()
+    return render_template('shop.html' , tamano_carrito = tamano)
 
 @bp.route('/Cliente/shop')
 def show_comprar():
-    return render_template('shop.html')
+    carrito_compras = Carrito()
+    tamano = carrito_compras.tamanoD()
+    return render_template('shop.html' , tamano_carrito = tamano)
 
 
 @bp.route('/Cliente/shop-single')
