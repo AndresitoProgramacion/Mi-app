@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="static/img/logo1.png">
+    <link rel="icon" href="{{ url_for('static',filename='img/logo1.png') }}">
     <title>Document</title>
 </head>
 
-<body>
-    <div>
+<body background="{{ url_for('static',filename='img/registro2.jpg') }}" >
+    <div style="display: flex; width: 100%; justify-content: center; margin-top: 15%; " >
         <form action="{{ url_for('bp_registro.insertar') }}" method="post" >
-            <label for="">Nombre</label>
-            <input name="nombre" type="" required >
-            <label  for="">Correo</label>
-            <input name="correo" type="" required >
-            <label for="">Direccion</label>
-            <input name="direccion" type="" required >
-            <label for="">Telefono</label>
-            <input name="telefono" type="" required >
-            <label for="">Contrasena</label>
-            <input  name="contrasena" type="" required >
-            <button>Registrar</button>
+            <label for="">Nombre</label><br>
+            <input name="nombre" type="" required ><br>
+            <label  for="">Correo</label><br>
+            <input name="correo" type="" required ><br>
+            <label for="">Direccion</label><br>
+            <input name="direccion" type="" required ><br>
+            <label for="">Telefono</label><br>
+            <input name="telefono" type="" required ><br>
+            <label for="">Contrasena</label><br>
+            <input  name="contrasena" type="" required ><br>
+            <button>Registrar</button><br>
         </form>
 
 
